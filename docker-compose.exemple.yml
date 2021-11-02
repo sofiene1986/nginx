@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  nginx:
+    #image: sofiene-nginx
+    build: nginx-php
+    environment:
+      - SERVERNAME=localhost
+      - PHP_CONTAINER_NAME=php
+    ports:
+      - "80:80"
+  php:
+    image: php:7.3.32-fpm

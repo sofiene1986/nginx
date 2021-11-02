@@ -9,3 +9,6 @@ VOLUME /app
 WORKDIR /app
 COPY config/.bashrc /root/.bashrc
 RUN chown app:www-data /root/.bashrc
+COPY config/docker-entrypoint.sh /
+RUN chmod 777 /docker-entrypoint.sh && chmod +x /docker-entrypoint.sh
+ENTRYPOINT ["/docker-entrypoint.sh"]
